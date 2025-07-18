@@ -1,5 +1,3 @@
-package api;
-
 public class RegistrationResponse {
     private boolean success;
     private UserInResponse user;

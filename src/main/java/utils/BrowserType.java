@@ -1,4 +1,6 @@
 package utils;
 
-public class BroserType {
+public enum BrowserType {
+    CHROME,
+    YANDEX;
 }

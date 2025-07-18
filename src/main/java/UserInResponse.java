@@ -1,5 +1,3 @@
-package api;
-
 public class UserInResponse {
     private String email;
     private String name;
