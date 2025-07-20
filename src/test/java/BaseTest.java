@@ -3,7 +3,7 @@ import io.restassured.filter.log.RequestLoggingFilter;
 import io.restassured.filter.log.ResponseLoggingFilter;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
-import utils.DriverHelper;
+import ru.practicum.stellarburgers.utils.DriverHelper;
 
 public class BaseTest {
     WebDriver driver;

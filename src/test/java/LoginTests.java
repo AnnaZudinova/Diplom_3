@@ -1,11 +1,11 @@
-import jdk.jfr.Description;
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import page_object.ForgotPasswordPage;
-import page_object.LoginPage;
-import page_object.MainPage;
-import page_object.RegistrationPage;
+import ru.practicum.stellarburgers.page.object.ForgotPasswordPage;
+import ru.practicum.stellarburgers.page.object.LoginPage;
+import ru.practicum.stellarburgers.page.object.MainPage;
+import ru.practicum.stellarburgers.page.object.RegistrationPage;
 
 import static org.junit.Assert.assertEquals;
 
@@ -18,7 +18,7 @@ public class LoginTests extends BaseTest {
     }
 
     @Test
-    @Description("вход по кнопке «Войти в аккаунт» на главной")
+    @DisplayName("вход по кнопке «Войти в аккаунт» на главной")
     public void testLoginByEnterAccountOnManePage (){
         driver.get(MainPage.URL);
 
@@ -34,7 +34,7 @@ public class LoginTests extends BaseTest {
     }
 
     @Test
-    @Description("вход через кнопку «Личный кабинет»")
+    @DisplayName("вход через кнопку «Личный кабинет»")
     public void testLoginByPersonalAccount (){
         driver.get(MainPage.URL);
 
@@ -50,7 +50,7 @@ public class LoginTests extends BaseTest {
     }
 
     @Test
-    @Description("вход через кнопку в форме регистрации")
+    @DisplayName("вход через кнопку в форме регистрации")
     public void testLoginByRegistrationPage (){
         driver.get(MainPage.URL);
 
@@ -70,7 +70,7 @@ public class LoginTests extends BaseTest {
     }
 
     @Test
-    @Description("вход через кнопку в форме восстановления пароля")
+    @DisplayName("вход через кнопку в форме восстановления пароля")
     public void testLoginByForgotPasswordPage (){
         driver.get(MainPage.URL);
 

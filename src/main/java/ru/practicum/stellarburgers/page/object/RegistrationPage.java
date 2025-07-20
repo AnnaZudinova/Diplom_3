@@ -1,5 +1,6 @@
-package page_object;
+package ru.practicum.stellarburgers.page.object;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -19,25 +20,32 @@ public class RegistrationPage {
 
     public RegistrationPage (WebDriver driver) {this.driver=driver;}
 
+    @Step("Заполнить поле имя")
     public void fillNameField (String name) {
         driver.findElement(nameField).sendKeys(name);
     }
+
+    @Step("Заполнить поле Email")
     public void fillEmailField (String email) {
         driver.findElement(emailField).sendKeys(email);
     }
 
+    @Step("Заполнить поле Пароль")
     public void fillPasswordField (String password) {
         driver.findElement(passwordField).sendKeys(password);
     }
 
+    @Step("Нажать зарегистрироваться")
     public void clickRegistrationButton () {
         driver.findElement(registrationButton).click();
     }
 
+    @Step("Нажать войти")
     public void clickEnterButton () {
         driver.findElement(enterButton).click();
     }
 
+    @Step("Проверка видимости ошибки Неверный пароль")
     public boolean isIncorrectPasswordErrorVisible () {
         new WebDriverWait(driver, Duration.ofSeconds(5))
                 .until(ExpectedConditions.visibilityOfElementLocated(incorrectPasswordError));

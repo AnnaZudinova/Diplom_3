@@ -1,9 +1,9 @@
-import jdk.jfr.Description;
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.After;
 import org.junit.Test;
-import page_object.LoginPage;
-import page_object.MainPage;
-import page_object.RegistrationPage;
+import ru.practicum.stellarburgers.page.object.LoginPage;
+import ru.practicum.stellarburgers.page.object.MainPage;
+import ru.practicum.stellarburgers.page.object.RegistrationPage;
 
 import static org.junit.Assert.assertEquals;
 
@@ -11,7 +11,7 @@ public class RegistrationTests extends BaseTest {
     UserSteps userSteps=new UserSteps();
 
     @Test
-    @Description("успешная регистрация")
+    @DisplayName("успешная регистрация")
     public void testSuccessfulRegistration() {
         driver.get(MainPage.URL);
 
@@ -30,7 +30,7 @@ public class RegistrationTests extends BaseTest {
     }
 
     @Test
-    @Description("ошибка для некорректного пароля. Минимальный пароль — шесть символов")
+    @DisplayName("ошибка для некорректного пароля. Минимальный пароль — шесть символов")
     public void testRegistrationWithShortPassword() {
         driver.get(MainPage.URL);
 

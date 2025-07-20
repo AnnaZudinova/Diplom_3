@@ -1,4 +1,4 @@
-package utils;
+package ru.practicum.stellarburgers.utils;
 
 public enum BrowserType {
     CHROME,

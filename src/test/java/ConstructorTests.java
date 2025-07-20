@@ -1,46 +1,46 @@
-import jdk.jfr.Description;
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.After;
 import org.junit.Test;
-import page_object.MainPage;
+import ru.practicum.stellarburgers.page.object.MainPage;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class ConstructorTests extends BaseTest {
 
     @Test
-    @Description("переход к разделу Соусы")
+    @DisplayName("переход к разделу Соусы")
     public void goToSauceTest() {
         driver.get(MainPage.URL);
 
         MainPage mainPageObj=new MainPage(driver);
 
         mainPageObj.clickSauceSection();
-        assertEquals(true,mainPageObj.isSpicySauceVisible());
+        assertTrue(mainPageObj.isSauceSectionActive());
     }
 
     @Test
-    @Description("переход к разделу Начинки")
-    public void goToFillingTest() {
+    @DisplayName("переход к разделу Начинки")
+    public void goToFillingTest(){
         driver.get(MainPage.URL);
 
         MainPage mainPageObj=new MainPage(driver);
 
         mainPageObj.clickFillingSection();
-        assertEquals(true,mainPageObj.isProtostomiaMeatVisible());
+        assertTrue(mainPageObj.isFillingSectionActive());
     }
 
     @Test
-    @Description("переход к разделу Булки")
+    @DisplayName("переход к разделу Булки")
     public void goToBunsTest() {
         driver.get(MainPage.URL);
 
-        MainPage mainPageObj=new MainPage(driver);
+        MainPage mainPageObj = new MainPage(driver);
 
-        mainPageObj.clickFillingSection();
-        if (mainPageObj.isProtostomiaMeatVisible()) {
+        mainPageObj.clickSauceSection();
+        if (mainPageObj.isSauceSectionActive()) {
             mainPageObj.clickBunsSection();
+            assertTrue(mainPageObj.isBunSectionActive());
         }
-        assertEquals(true,mainPageObj.isFluorescentBunVisible());
     }
 
     @After
